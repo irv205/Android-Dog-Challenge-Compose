@@ -5,14 +5,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kk.dogchallengecompose.core.utils.ResponseHandler
-import com.kk.dogchallengecompose.data.repository.RepositoryImp
+import com.kk.dogchallengecompose.domain.repository.IRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val repository: RepositoryImp) : ViewModel() {
+class MainViewModel @Inject constructor(private val repository: IRepository) : ViewModel() {
 
     private val _state = mutableStateOf<MainViewState?>(MainViewState.Idle)
     val state : State<MainViewState?> get() = _state
